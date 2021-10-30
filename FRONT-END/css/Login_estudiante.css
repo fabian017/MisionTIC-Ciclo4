@@ -1,0 +1,56 @@
+body{
+    background-color: rgba(19, 133, 40, 0.856);
+    background-size:auto;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Glory', sans-serif;
+    }
+.container{
+    height: 100%;
+    align-content: center;
+    }
+.d-flex{
+    flex-wrap: nowrap;
+    }
+.card-header h3{
+    color: white;
+    }
+.card{
+     height: 500Spx;
+     margin-top: auto;
+     margin-bottom: auto;
+     width: 400px;
+     border-radius: 7px;
+     background: rgb(31,210,64,0.9023984593837535);
+     background: linear-gradient(137deg, rgba(31,210,64,0.9023984593837535) 13%, rgba(10,17,18,0.7539390756302521) 100%);
+     }
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+.login_btn{
+        color: black;
+        background-color: #36d436;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .mt-2{
+        margin-bottom: 0px;
+    }
+    .login_btn:hover{
+        color: black;
+        background-color: white;
+        }
+#icono1{
+    color: red;
+}
+#icono2{
+    color:rgb(92, 194, 67);
+}

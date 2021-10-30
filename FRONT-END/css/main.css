@@ -1,0 +1,51 @@
+body{
+    font-family: 'Glory', sans-serif;
+    background: rgb(84,246,135);
+background: radial-gradient(circle, rgba(84,246,135,0.958420868347339) 0%, rgba(0,56,255,1) 100%);
+}
+
+.navbar-brand{
+    background-color: #4DFE3E;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+    font-size: 20px;
+    padding: 15px 25px 15px 25px;
+}
+
+.navbar{
+    color: white;
+    background-color: #1471e7;
+}
+
+.color{
+    color: white;
+}
+
+.items-izq{
+   width: 19%;
+   height: 100%;
+   margin-left: -123px;
+   margin-top: 20px;
+   position: absolute;
+}
+
+
+
+.card-body{
+    background-color: #4DFE3E;
+}
+
+.card-img-top{
+    background-color: #4DFE3E;
+}
+
+.tarjetas{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.carousel-control-next{
+    color: #1471e7;
+}
+
+
