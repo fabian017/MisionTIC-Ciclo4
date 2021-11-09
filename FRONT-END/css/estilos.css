@@ -30,9 +30,11 @@ body {
 	transition: .3s ease all;
 	transform: rotateY(0deg);
 	transform-style: preserve-3d;
+	backface-visibility: hidden;
 	cursor: pointer;
 	z-index: 2;
 }
+
 
 .tarjeta.active {
 	transform: rotateY(180deg);
@@ -52,7 +54,7 @@ body {
 
 .tarjeta .delantera {
 	width: 100%;
-	background: url(../img/tarjeta/bg-tarjeta-01.jpg);
+	background: url(../img/tarjeta/bg-tarjeta-03.jpg);
 	background-size: cover;
 }
 
@@ -106,7 +108,7 @@ body {
 
 .trasera .barra-magnetica {
 	height: 40px;
-	background: #000;
+	background: #fff;
 	width: 100%;
 	position: absolute;
 	top: 30px;
@@ -129,13 +131,13 @@ body {
 
 .trasera .datos #firma .firma {
 	height: 40px;
-	background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+	background: repeating-linear-gradient(white 0, white 5px, gray 5px, gray 10px);
 }
 
 .trasera .datos #firma .firma p {
 	line-height: 40px;
-	font-family: 'Liu Jian Mao Cao', cursive;
-	color: #000;
+	font-family: cursive;
+	color: black;
 	font-size: 30px;
 	padding: 0 10px;
 	text-transform: capitalize;
@@ -169,7 +171,7 @@ body {
 	height: 50px;
 	font-size: 20px;
 	line-height: 20px;
-	background: #ff9100;
+	background: #0bc543;
 	color: #fff;
 	position: relative;
 	top: -25px;
@@ -187,7 +189,7 @@ body {
 }
 
 .contenedor-btn .btn-abrir-formulario.active {
-	transform: rotate(45deg);
+	transform: rotate(60deg);
 }
 
 /* ---------- Formulario Tarjeta ----------*/
@@ -229,13 +231,7 @@ body {
 
 .formulario-tarjeta input:hover,
 .formulario-tarjeta select:hover {
-	border: 2px solid #93BDED;
-}
-
-.formulario-tarjeta input:focus,
-.formulario-tarjeta select:focus {
-	outline: rgb(4,4,4);
-	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+	border: 2px solid #3d98ff;
 }
 
 .formulario-tarjeta input {
