@@ -21,7 +21,7 @@ tarjeta.addEventListener('click', () => {
 	tarjeta.classList.toggle('active');
 });
 
-// (+)
+// Boton Abrir y cerrar formulario
 btnAbrirFormulario.addEventListener('click', () => {
 	btnAbrirFormulario.classList.toggle('active');
 	formulario.classList.toggle('active');
@@ -37,7 +37,7 @@ for(let i = 1; i <= 12; i++){
 
 // AÑO
 const yearActual = new Date().getFullYear();
-for(let i = yearActual; i <= yearActual + 8; i++){
+for(let i = yearActual; i <= yearActual + 10; i++){
 	let opcion = document.createElement('option');
 	opcion.value = i;
 	opcion.innerText = i;
@@ -91,7 +91,7 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	firma.textContent = valorInput;
 
 	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Santiago Aviles';
+		nombreTarjeta.textContent = 'Juan Perez';
 	}
 
 	mostrarFrente();
