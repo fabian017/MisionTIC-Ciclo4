@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>   
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title> configuracion de perfil-profesor </title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="css/estilosConfProfes.css">
+            <link rel="functionsheet" href="js/funciones.js"> 
+        </head>  
+<body>
+<form id="conf_profesor" method="post" enctype="multipart/form-data">
+        <div class="titulo">
+            <div class="smart-forms smart-container wrap-2">         
+              <div class="form-header header-primary">
+                <h4><i class="fa fa-tittle"></i>configuracion de perfil(profesor):</h4>
+              </div>           
+              <form method="post" action="/" id="contact">
+                <div class="frm-pcp">
+                    <div class="diseños-cajas">
+                        <label for="guest" class="field-label">Nombres:</label><br><br>                       
+                          <input type="text" name="guest" id="guestnames" class="gui-input" required="" placeholder="nombres"><br><br>
+                          <span class="field-icon"><i class="fa fa-user"></i></span> 
+                        </label>
+                      </div>
+                      <div class="diseños-cajas">
+                        <label for="guest" class="field-label">Apellidos:</label><br><br>                        
+                          <input type="text" name="guest" id="guestlastnames" class="gui-input" required="" placeholder="Apellidos"><br><br>
+                          <span class="field-icon"><i class="fa fa-user"></i></span> 
+                        </label>
+                      </div>                              
+                      <div class="form-CE">
+                        <div class="diseños-cajas">
+                          <label for="guest" class="field-label">Correo electronico:</label><br><br>                          
+                            <input type="email" name="guest" id="guestemail" class="gui-input" required="" placeholder="alquien@mail.com"><br><br>
+                            <span class="field-icon"><i class="fa fa-envelope"></i></span>  
+                          </label>
+                        </div>                    
+                        <div class="diseños-cajas">
+                          <label for="guest" class="field-label">Contraseña:</label><br><br>
+                            <input type="text" name="guest" id="guestpassword" class="gui-input" required="" placeholder="****"><br><br>
+                            <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
+                          </label>
+                        </div>
+                      </div>
+                      <div class="diseños-cajas">
+                        <label for="guest" class="field-label">Hobbies:</label><br><br>                       
+                            <select name="guest" id="guesthobbies" class="gui-input" required="" >
+                                <option>seleccionar</option>
+                                <option>Coleccionista</option>
+                                <option>Hacer deporte</option>
+                                <option>Jugar videojuegos</option>
+                                <option>Cocinar</option>
+                                <option>Leer</option>
+                                <option>Ver peliculas/series</option>
+                                <option>Escuchar musica</option>
+                                <option>Tocar instrumentos</option>
+                                <option>Hacer jardineria</option>
+                                <option>Hacer meditación</option>                               
+                            </select><br><br>
+                            <select>
+                              <option>seleccionar</option>
+                                <option>Coleccionista</option>
+                                <option>Hacer deporte</option>
+                                <option>Jugar videojuegos</option>
+                                <option>Cocinar</option>
+                                <option>Leer</option>
+                                <option>Ver peliculas/series</option>
+                                <option>Escuchar musica</option>
+                                <option>Tocar instrumentos</option>
+                                <option>Hacer jardineria</option>
+                                <option>Hacer meditación</option>
+                          </select><br><br>
+                          <select>
+                            <option>seleccionar</option>
+                              <option>Coleccionista</option>
+                              <option>Hacer deporte</option>
+                              <option>Jugar videojuegos</option>
+                              <option>Cocinar</option>
+                              <option>Leer</option>
+                              <option>Ver peliculas/series</option>
+                              <option>Escuchar musica</option>
+                              <option>Tocar instrumentos</option>
+                              <option>Hacer jardineria</option>
+                              <option>Hacer meditación</option>
+                        </select><br>
+                          <span class="field-icon"><i class="fa fa-user hobbies"></i></span>  
+                        </label>
+                      </div>
+                      <div class="diseños-cajas">
+                        <label for="guesthobbies" class="field-label">Idiomas que maneja:</label><br><br>
+                                <input type="checkbox" name="switch1" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>INGLES</span><br>
+                                <input type="checkbox" name="switch2" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>ESPAÑOL</span><br>
+                                <input type="checkbox" name="switch3" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>PORTUGUES</span><br>
+                                <input type="checkbox" name="switch4" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>ALEMAN</span><br>
+                                <input type="checkbox" name="switch5" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>RUSO</span><br>
+                                <input type="checkbox" name="switch6" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>FRANCES</span><br>
+                                <input type="checkbox" name="switch7" id="switch" value="switch1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <span>ARABE</span>
+                              </label>
+                            </div>                           
+                      <div class="diseños-caja-foto">
+                        <label for="guest" class="field-label">Foto de perfil:</label><br><br>
+                        <label for="guest" class="field prepend-icon">
+                            <input type="file" name="guest" id="guestphoto" class="gui-input" required=""><br><br>
+                          <span class="field-icon"><i class="fa fa-user photo"></i></span>  
+                        </label>
+                      </div>
+<button name="botonguardar"id="guardardatos"class="diseño-boton">Guardar</button>
+</form>
+</body>
+</html>
