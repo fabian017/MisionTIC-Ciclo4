@@ -1,0 +1,13 @@
+com\mycompany\apiresttl\controller\PagoTarjetaCreditoController.class
+com\mycompany\apiresttl\controller\ProductoController.class
+com\mycompany\apiresttl\dao\ProductoDAO.class
+com\mycompany\apiresttl\dao\PagoTarjetaCreditoDAO.class
+com\mycompany\apiresttl\models\Producto.class
+filtros\Autorizacion.class
+com\mycompany\apiresttl\utilidades\Mensaje.class
+com\mycompany\apiresttl\models\Usuario.class
+com\mycompany\apiresttl\controller\UsuarioController.class
+com\mycompany\apiresttl\models\PagoTarjetaCredito.class
+com\mycompany\apiresttl\dao\UsuarioDAO.class
+com\mycompany\apiresttl\Aplicacion.class
+com\mycompany\apiresttl\db\Conexion.class
