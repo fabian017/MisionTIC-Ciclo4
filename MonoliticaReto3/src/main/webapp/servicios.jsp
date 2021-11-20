@@ -43,7 +43,7 @@
                                 <td><%=servicio.getTipo_string()%></td>
                                 <td><%=servicio.getPrecio()%></td>
                                 <td>
-                                    <a href="#" class="btn btn-warning">Editar</a>
+                                    <a href="?accion=editar&id=<%=servicio.getId()%>" class="btn btn-warning">Editar</a>
                                     <a href="?accion=eliminar&id=<%=servicio.getId()%>" 
                                        class="btn btn-danger"
                                        onclick="return confirm('Desea eliminar el servicio seleccionado')">Eliminar</a>

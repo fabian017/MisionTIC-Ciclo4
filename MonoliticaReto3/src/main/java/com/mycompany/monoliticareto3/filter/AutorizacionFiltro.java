@@ -25,7 +25,7 @@ public class AutorizacionFiltro implements Filter {
         HttpSession sesion = ((HttpServletRequest)request).getSession();
         HttpServletRequest peticion = ((HttpServletRequest)request);
         
-        if((peticion.getRequestURI().contains("/login"))||(peticion.getRequestURI().contains("/ingresarUsuario.jsp"))){
+        if((peticion.getRequestURI().contains("/login"))||(peticion.getRequestURI().contains("/login?accion=ingresarUsuario.jsp"))){
             chain.doFilter(request, response);
         }else{
             if(sesion.getAttribute("AUTORIZADO") == null){

@@ -45,7 +45,7 @@
                         <a class="nav-link" href="usuarios">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login?cerrar">Cerrar Sesión (<%=usuario.getUsuario()%>)</a>
+                        <a class="nav-link" href="login?cerrar">Cerrar Sesión(<%=usuario.getUsuario()%>)</a>
                     </li>
                     
                     <%        

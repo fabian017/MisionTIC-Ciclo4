@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,36 +34,55 @@ public class ServiciosServlet extends HttpServlet {
         Conexion conexion = new Conexion();
         ServicioDAO servicioDAO = new ServicioDAO(conexion);
         String opcion = request.getParameter("accion");
-
+        int id = 0;
         opcion = (opcion == null) ? "listar" : opcion;
 
-        if (opcion.equals("ingresarServicios.jsp")) {
-            boolean ingresar = (request.getParameter("guardar") != null) ? true : false;
-            if (ingresar) {
-                Servicio servicio = new Servicio();
-                servicio.setTipo_string(request.getParameter("nombre"));
-                servicio.setPrecio(Float.parseFloat(request.getParameter("precio")));
-                Servicio s = servicioDAO.add(servicio);
+        switch (opcion) {
+            case "ingresarServicios.jsp":
+                boolean ingresar = (request.getParameter("guardar") != null) ? true : false;
+                if (ingresar) {
+                    Servicio servicio = new Servicio();
+                    servicio.setTipo_string(request.getParameter("nombre"));
+                    servicio.setPrecio(Float.parseFloat(request.getParameter("precio")));
+                    Servicio s = servicioDAO.add(servicio);
+                    
+                    response.sendRedirect("servicios");
+                    
+                } else {
+                    request.getRequestDispatcher("ingresarServicios.jsp").forward(request, response);
+                }   break;
+            case "editar":
+                id = (request.getParameter("id") != null) ? Integer.parseInt(request.getParameter("id")) : 0;
+                Servicio servicio = servicioDAO.obtenerServicio(id);
+                request.setAttribute("servicioSeleccionado", servicio);
+                
+                boolean actualizarS = (request.getParameter("actualizar") != null) ? true : false;
+                    if(actualizarS){
+                        Servicio servicio1 = new Servicio();
+                        String tipoStringUpdate = request.getParameter("nombre");
+                        float precioUpdate = (Float.parseFloat(request.getParameter("precio")));
+                        servicio1.setTipo_string(tipoStringUpdate);
+                        servicio1.setPrecio(precioUpdate);
+                        servicio1.setId(id);
+                        servicioDAO.edit(servicio1);
+                        response.sendRedirect("servicios");
+                    }else{
+                        request.getRequestDispatcher("editarServicios.jsp").forward(request, response);
+                    }
 
-                response.sendRedirect("servicios");
-
-            } else {
-                request.getRequestDispatcher("ingresarServicios.jsp").forward(request, response);
-            }
-
-        }else if (opcion.equals("eliminar")) {
-                int id = (request.getParameter("id") != null) ? Integer.parseInt(request.getParameter("id")) : 0;
+                break;
+            case "eliminar":
+                id = (request.getParameter("id") != null) ? Integer.parseInt(request.getParameter("id")) : 0;
                 if (id != 0) {
                     servicioDAO.delete(id);
                     response.sendRedirect("servicios");
                 }
-        }else {
-            ArrayList<Servicio> servicios = servicioDAO.list();
-
-            request.setAttribute("servicios", servicios);
-
-            request.getRequestDispatcher("servicios.jsp").forward(request, response);
-
+                break;
+            default:
+                ArrayList<Servicio> servicios = servicioDAO.list();
+                request.setAttribute("servicios", servicios);
+                request.getRequestDispatcher("servicios.jsp").forward(request, response);
+                break;
         }
 
     }

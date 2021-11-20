@@ -14,7 +14,7 @@
         <%@include file="WEB-INF/header.jsp" %>
     </head>
     <body>    
-        <h2 class="text-center p-3">Este es el listado de los servicios</h2>
+        <h2 class="text-center p-3">Este es el listado de los usuarios</h2>
         <div class="container p-3">
 
             <div class="jumbotron">
@@ -52,7 +52,7 @@
                                 <td><%=usuario.getUsuario()%></td>
                                 <td><%=usuario.getTipo_usuario()%></td>
                                 <td>
-                                    <a href="#" class="btn btn-warning">Editar</a>
+                                    <a href="?accion=editar&id=<%=usuario.getId()%>" class="btn btn-warning">Editar</a>
                                     <a href="?accion=eliminar&id=<%=usuario.getId()%>" 
                                        class="btn btn-danger"
                                        onclick="return confirm('Desea eliminar el usuario seleccionado')">Eliminar</a>

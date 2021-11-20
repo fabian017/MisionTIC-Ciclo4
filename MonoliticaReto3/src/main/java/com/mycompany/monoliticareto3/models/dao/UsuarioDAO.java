@@ -107,6 +107,64 @@ public class UsuarioDAO {
         
         return usuarios;
     }
+    
+    //Buscar un solo Usuario
+    public Usuario obtenerUsuario(int id) {
+        Usuario usuario = new Usuario();
+
+        try {
+            String sql = "SELECT * FROM usuarios WHERE id = ?";
+            PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql);
+            pst.setInt(1, id);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                usuario.setId(rs.getInt("id"));
+                usuario.setNombre(rs.getString("nombre"));
+                usuario.setApellido(rs.getString("apellido"));
+                usuario.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                usuario.setEdad(rs.getInt("edad"));
+                usuario.setSigno_zodiaco(rs.getString("signo_zodiaco"));
+                usuario.setIdioma_nativo(rs.getString("idioma_nativo"));
+                usuario.setIdioma_aprender(rs.getString("idioma_aprender"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setPassword(rs.getString("password"));
+                usuario.setTipo_de_cliente(rs.getInt("tipo_de_cliente"));
+                usuario.setTipo_usuario(rs.getInt("tipo_usuario"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return usuario;
+    }
+    
+    //Editar Usuarios
+    public boolean edit(Usuario usuario) {
+        boolean resultado =false;
+        try {
+            String sql = "UPDATE usuarios SET nombre = ?, apellido = ?, fecha_nacimiento = ?, edad = ?, signo_zodiaco = ?, idioma_nativo = ?, idioma_aprender = ?, usuario = ?, password = ?, tipo_de_cliente = ?, tipo_usuario = ?  WHERE id = ?";
+            PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql);
+            pst.setString(1, usuario.getNombre());
+            pst.setString(2, usuario.getApellido());
+            pst.setString(3, usuario.getFecha_nacimiento());
+            pst.setInt(4, usuario.getEdad());
+            pst.setString(5, usuario.getSigno_zodiaco());
+            pst.setString(6, usuario.getIdioma_nativo());
+            pst.setString(7, usuario.getIdioma_aprender());
+            pst.setString(8, usuario.getUsuario());
+            pst.setString(9, usuario.getPassword());
+            pst.setInt(10, usuario.getTipo_de_cliente());
+            pst.setInt(11, usuario.getTipo_usuario());
+            pst.setInt(12, usuario.getId());
+            int filas = pst.executeUpdate();
+            if (filas > 0) {
+                resultado = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+    
     //Eliminar los productos
     public boolean delete(int id){
         boolean resultado = false;

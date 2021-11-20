@@ -31,6 +31,36 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
+        Conexion conexion = new Conexion();
+        UsuarioDAO usuarioDAO = new UsuarioDAO(conexion);
+        String opcion = request.getParameter("accion");
+        
+        opcion = (opcion==null) ? "listar" :  opcion;
+        
+        if(opcion.equals("ingresarUsuario.jsp")){
+           System.out.println("Entre a Case IU");
+                boolean ingresar = (request.getParameter("guardar") != null) ? true : false;
+                if (ingresar) {
+                    Usuario usuario = new Usuario();
+                    usuario.setNombre(request.getParameter("nombre"));
+                    usuario.setApellido(request.getParameter("apellido"));
+                    usuario.setFecha_nacimiento(request.getParameter("fecha_nacimiento"));
+                    usuario.setEdad(Integer.parseInt(request.getParameter("edad")));
+                    usuario.setSigno_zodiaco(request.getParameter("signo_zodiaco"));
+                    usuario.setIdioma_nativo(request.getParameter("idioma_nativo"));
+                    usuario.setIdioma_aprender(request.getParameter("idioma_aprender"));
+                    usuario.setUsuario(request.getParameter("usuario"));
+                    usuario.setPassword(request.getParameter("password"));
+                    usuario.setTipo_de_cliente(Integer.parseInt(request.getParameter("tipo_de_cliente")));
+                    usuario.setTipo_usuario(Integer.parseInt(request.getParameter("tipo_usuario")));
+                    Usuario u = usuarioDAO.add(usuario);
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                    
+                } else {
+                    request.getRequestDispatcher("ingresarUsuario.jsp").forward(request, response);
+                }
+            
+        }
         
         if(request.getParameter("cerrar") != null){
             sesion.invalidate();
@@ -40,12 +70,10 @@ public class LoginServlet extends HttpServlet {
             String usuario = request.getParameter("usuario");
             String password = request.getParameter("password");
             
-            Conexion conexion = new Conexion();
-            UsuarioDAO usuarioDAO = new UsuarioDAO(conexion);
+           
             Usuario u = usuarioDAO.login(usuario, password);
             if(u.getId()!=0){
                 sesion.setAttribute("AUTORIZADO", "SI");
-                sesion.setMaxInactiveInterval(3600);
                 u.setPassword("");
                 sesion.setAttribute("usuario", u);
                 response.sendRedirect("servicios");

@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <a href="ingresarUsuario.jsp" class="btn btn-danger btn-block">Registrar</a>
+                                    <a href="?accion=ingresarUsuario.jsp" class="btn btn-danger btn-block">Registrar</a>
                                 </div>
                             </div>
                         </div>
