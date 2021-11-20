@@ -1,14 +1,14 @@
-package com.mycompany.apiresttl.models;
+package com.mycompany.monoliticareto3.models.entidades;
 
-public class Producto {
+public class Servicio {
     private int id;
     private String tipo_string;
     private float precio;
 
-    public Producto() {
+    public Servicio() {
     }
 
-    public Producto(int id, String tipo_string, float precio) {
+    public Servicio(int id, String tipo_string, float precio) {
         this.id = id;
         this.tipo_string = tipo_string;
         this.precio = precio;
@@ -39,7 +39,6 @@ public class Producto {
     }
 
     
-
     
     
 }

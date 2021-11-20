@@ -29,7 +29,6 @@ public class ProductoDAO {
                 Producto p = new Producto();
                 p.setId(rs.getInt("id"));
                 p.setTipo_string(rs.getString("tipo_string"));
-                p.setTipo_int(rs.getInt("tipo_int"));
                 p.setPrecio(rs.getFloat("precio"));
                 productos.add(p);
             }
@@ -51,7 +50,6 @@ public class ProductoDAO {
                 Producto p = new Producto();
                 p.setId(rs.getInt("id"));
                 p.setTipo_string(rs.getString("tipo_string"));
-                p.setTipo_int(rs.getInt("tipo_int"));
                 p.setPrecio(rs.getFloat("precio"));
                 return p;
             }
@@ -63,11 +61,10 @@ public class ProductoDAO {
     //POST AGREGAR
     public Producto addProducto(Producto producto) {
         try {
-            String sql = "INSERT INTO servicios VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO servicios VALUES(?, ?, ?)";
             PreparedStatement pst = this.conexion.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             pst.setInt(1, 0);
             pst.setString(2, producto.getTipo_string());
-            pst.setInt(3, producto.getTipo_int());
             pst.setFloat(4, producto.getPrecio());
             int filas = pst.executeUpdate();
             if (filas > 0) {
@@ -88,9 +85,8 @@ public class ProductoDAO {
             String sql = "UPDATE servicios SET tipo_string = ?, tipo_int = ?, precio = ? WHERE id = ?";
             PreparedStatement pst = this.conexion.prepareStatement(sql);
             pst.setString(1, producto.getTipo_string());
-            pst.setInt(2, producto.getTipo_int());
-            pst.setFloat(3, producto.getPrecio());
-            pst.setInt(4, producto.getId());
+            pst.setFloat(2, producto.getPrecio());
+            pst.setInt(3, producto.getId());
             int filas = pst.executeUpdate();
             if (filas > 0) {
                 resultado = true;

@@ -1,0 +1,9 @@
+com\mycompany\monoliticareto3\controller\UsuariosServlet.class
+com\mycompany\monoliticareto3\filter\AutorizacionFiltro.class
+com\mycompany\monoliticareto3\models\dao\ServicioDAO.class
+com\mycompany\monoliticareto3\models\entidades\Servicio.class
+com\mycompany\monoliticareto3\controller\LoginServlet.class
+com\mycompany\monoliticareto3\db\Conexion.class
+com\mycompany\monoliticareto3\models\entidades\Usuario.class
+com\mycompany\monoliticareto3\models\dao\UsuarioDAO.class
+com\mycompany\monoliticareto3\controller\ServiciosServlet.class
