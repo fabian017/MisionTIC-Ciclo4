@@ -8,12 +8,14 @@ import { PrincipalComponent } from './components/principal/principal.component';
 
 import { RUTAS } from './app.routes';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
-    InicioComponent
+    InicioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
