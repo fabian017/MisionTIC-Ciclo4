@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Glory', sans-serif;
+    
+}
+html{
+    background: radial-gradient(circle, rgba(84,246,135,0.958420868347339) 0%, rgba(0,56,255,1) 100%);
+}
