@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Usuario } from './Interfaces/usuarios.interface';
+import { SesionService } from './services/sesion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sprint';
+  usuario:Usuario;
+  
+  constructor(public sesionService:SesionService){
+    this.usuario = this.sesionService.getUsuario();
+  }
 }

@@ -23,14 +23,14 @@
                             Perfil
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/editar-perfil',usuario.id]">Editar perfil</a></li>
                             <li><a class="dropdown-item" href="#">Mi Aprendizaje</a></li>
-                            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/cerrar-sesion']">Cerrar Sesion</a></li>
                         </ul>
                     </li>
                 </ul>
                 <span class="navbar-text" style="color: white;">
-                    Nombre completo del perfil
+                    {{ sesionService.getUsuario().nombre }} {{ sesionService.getUsuario().apellido }}
                 </span>
             </div>
         </div>
@@ -68,38 +68,23 @@
         </ul>
     </div>
     <div class="tarjetas">
-        <div id="carouselExampleControls" class="carousel slide" data-interval="false" >
+        <div id="carouselExampleControls" class="carousel slide" data-interval="false"  *ngFor="let perfil of perfiles; let i =index">
             <div class="carousel-inner" data-interval="false">
                 <div class="carousel-item active">
                     <div class="card" style="width: 18rem;">
                         <img src="assets/img/icono-amistad.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Persona 1</h5>
-                            <p class="card-text">Soy una persona muy amigable y sociable, me gusta mucho las peliculas y el futbol, soy nativo de España, busco 
-                                alguna persona de habla inglesa para asi practicar juntos.
+                            <h5 class="card-title">Persona {{i+1}}</h5>
+                            <p class="card-text">Nombre: {{perfil.nombre}} {{perfil.apellido}}
                             </p>
-                            <a href="#" class="btn btn-primary">Enviar solicitud</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/img/icono-amistad.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Persona 2</h5>
-                            <p class="card-text">I am a very friendly and sociable person, I really like movies and football, I am a native of Australia, I am looking for
-                                Someone who speaks French to practice together.</p>
-                            <a href="#" class="btn btn-primary">Enviar solicitud</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/img/icono-amistad.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Persona 3</h5>
-                            <p class="card-text">I am a very friendly and sociable person, I really like movies and soccer, I am a native of France, I am looking for
-                                Someone who speaks Japanese to practice together.</p>
+                            <p class="card-text">Edad: {{perfil.edad}}
+                            </p>
+                            <p class="card-text">Signo: {{perfil.signoZodiaco}}
+                            </p>
+                            <p class="card-text">Idioma Nativo: {{perfil.idiomaNativo}}
+                            </p>
+                            <p class="card-text">Idioma Aprender: {{perfil.idiomaAprender}}
+                            </p>
                             <a href="#" class="btn btn-primary">Enviar solicitud</a>
                         </div>
                     </div>

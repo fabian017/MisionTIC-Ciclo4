@@ -22,7 +22,7 @@
             <a [routerLink]="['/inicio']">
                 <p class="nombre-titulo">TINDERLINGO</p>
             </a>
-            
+
             <nav>
                 <ul class="lista">
                     <a href="#sobre-nosotros">
@@ -31,81 +31,72 @@
                     <a href="#id-servicios">
                         <li>Contacto</li>
                     </a>
-                    <a href="Login_Usuario.html">
-                        <li>Registrarse</li>
-                    </a>
+                    
                 </ul>
             </nav>
         </div>
     </div>
 </header>
+
 <body>
     <div class="container">
-        <form action="" [formGroup]="formulario" (ngSubmit)="verificarDatos()" autocomplete="off">
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Iniciar Sesión</h3>
-                        <div class="d-flex justify-content-end social_icon">
-                            <span><i class="fab fa-facebook-square"></i></span>
-                            <span><i class="fab fa-google-plus-square"></i></span>
-                            <span><i class="fab fa-twitter-square"></i></span>
-                        </div>
+                        <h3>Modificar Datos</h3>
+                        
                     </div>
                     <div class="card-body">
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" 
-                                    id="usuario"
-                                    name="usuario"
-                                    class="form-control" 
-                                    placeholder="Usuario"
-                                    formControlName="usuario"
-                                    [class.is-invalid]="usuarioNoValido">
-                            <small *ngIf="usuarioNoValido"
-                            class="text-danger">
-                                Debe Ingresar El Usuario
-                            </small>
+                            <h4>Nombre: </h4>
+                            <input type="text" id="nombre" name="nombre" class="input-nombre" 
+                                value="{{ perfil.nombre }}" #nombre>
                         </div>
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" 
-                                    id="password"
-                                    name="password"
-                                    class="form-control" 
-                                    placeholder="Password"
-                                    formControlName="password"
-                                    [class.is-invalid]="passwordNoValido">
-                            <small *ngIf="passwordNoValido"
-                            class="text-danger">
-                                Debe Ingresar La Contraseña
-                            </small>
+                            <h4>Apellido: </h4>
+                            <input type="text" id="apellido" name="apellido" class="input-apellido" 
+                                value="{{perfil.apellido}}" #apellido>
                         </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Recordar usuario
-                        </div> 
-                        <button type="submit" class="btn login_btn">
-                            Ingresar
-                        </button>
+                        <div class="input-group form-group">
+                            <h4>Edad: </h4>
+                            <input type="text" id="edad" name="edad" class="input-edad" 
+                                value="{{perfil.edad}}" #edad>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <h4>Idioma Nativo: </h4>
+                            <input type="text" id="idiomaNativo" name="idiomaNativo" class="input-idiomaNativo" 
+                                value="{{perfil.idiomaNativo}}" #idiomaNativo>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <h4>Idioma a Aprender: </h4>
+                            <input type="text" id="idiomaAprender" name="idiomaAprender" class="input-idiomaAprender" 
+                                value="{{perfil.idiomaAprender}}" #idiomaAprender>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <h4>Usuario: </h4>
+                            <input type="text" id="usuario" name="usuario" class="input-usuario" 
+                                value="{{perfil.usuario}}" #usuario>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <h4>Contraseña: </h4>
+                            <input type="password" id="password" name="password" class="input-password" 
+                                value="{{perfil.password}}" #password>
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center links">
-                            Aún no tienes cuenta?<a href="#">Registrate</a>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <a href="#">Olvidaste tu contraseña?</a>
-                        </div>
+                        <button type="button" class="btn btn-primary btn-guardar" (click)="actualizarUsuario(nombre.value, apellido.value, edad.value, idiomaNativo.value, idiomaAprender.value, usuario.value, password.value )">
+                            Actualizar
+                        </button>
+                        <button type="button" class="btn btn-error btn-guardar" (click)="regresar()">
+                            Cancelar
+                        </button>
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="error-login" *ngIf="error">
-        Los Datos Ingresados son incorrectos
     </div>
 </body>
 <footer>

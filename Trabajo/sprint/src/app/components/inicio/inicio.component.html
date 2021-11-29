@@ -16,7 +16,7 @@
                     <a href="login_Profesor.html">
                         <li>Postularse como docente</li>
                     </a>
-                    <a href="login.html">
+                    <a [routerLink]="['/login']">
                         <li>Iniciar sesion</li>
                     </a>
                 </ul>
@@ -27,7 +27,7 @@
             <h2>APRENDE EL IDIOMA QUE QUIERAS CUANDO QUIERAS Y CON QUIEN QUIERAS</h2>
             <div class= "botones">
             <a class="boton" href="" target="_blank"> COMENZAR</a>
-            <a class="boton" href="" target="_blank"> YA TENGO CUENTA</a>
+            <a class="boton" [routerLink]="['/login']" target="_blank"> YA TENGO CUENTA</a>
             </div>
         </div>
     </div>
