@@ -1,0 +1,74 @@
+<div class="contenido">
+
+    <div class="contenido">
+        <form action="" [formGroup]="formulario" (ngSubmit)="" ="guardarDatos()" autocomplete="off">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registro de usuarios</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" 
+                               id="nombre" 
+                               name="nombre"
+                               class="form-control"
+                               formControlName="nombre"
+                               [class.is-invalid]="nombreNoValido">
+                        <small *ngIf="nombreNoValido"  class="text-danger">
+                            Debe ingresar el nombre del usuario
+                        </small>
+
+                    </div>
+                        <div class="form-group">
+                            <label for="correo">Correo</label>
+                            <input type="text" 
+                                   id="correo" 
+                                   name="correo"
+                                   class="form-control"
+                                   formControlName="correo"
+                                   [class.is-invalid]="correoNoValido">
+                            <small *ngIf="correoNoValido"  class="text-danger">
+                                Debe ingresar el correo electronico del usuario
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" 
+                                   id="username" 
+                                   name="username"
+                                   class="form-control"
+                                   formControlName="username"
+                                   [class.is-invalid]="usernameNoValido">
+                            <small *ngIf="usernameNoValido"  class="text-danger">
+                                Debe ingresar el nombre del usuario
+                            </small>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" 
+                                       id="password" 
+                                       name="password"
+                                       class="form-control"
+                                       formControlName="password"
+                                       [class.is-invalid]="passwordNoValido">
+                                <small *ngIf="passwordNoValido"  class="text-danger">
+                                    Debe ingresar la contraseña del usuario
+                                </small>
+                                
+                        </div>
+            
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-guardar">Registrar</button>
+                </div>
+            </div>
+        </form>
+        <div *ngIf="error" class="error-register">
+            Los datos ingresados son incorrectos
+        </div>
+        <div *ngIf= "ingresado"class="alert-info">
+            Su registro se ha realizado con exito
+            <br>
+            Por favor inicie sesion <a [routerLink]="['/login']">aqui</a>
+        </div>
+    </div>
+</div>
