@@ -1,0 +1,96 @@
+.nombre-titulo {
+    background-color: #4DFE3E;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    padding: 15px 25px 15px 25px;
+}
+
+li{
+    list-style: none;
+    margin-right: 25px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+}
+
+.lista{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: all 1s ease;
+    position: relative;
+}
+
+a:hover{
+    color: black;
+    -webkit-transform: scale(1.23);
+    transform: scale(1.23);
+}
+
+.boton{
+    text-decoration: none;
+    font-size: 18px;
+    background: #131c91;
+    padding: 15px 30px 15px 30px;
+    color: white;
+    border-radius: 8px;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.boton:hover{
+    background-color: black;
+    color: white;
+    -webkit-transform: scale(1.13);
+    transform: scale(1.1);
+}
+
+h1{
+    font-size: 70px;
+    margin: 0;
+    color: white;
+    padding: 15px 30px 15px 30px;
+    display: inline-block;
+    text-align: center;
+}
+header{
+    background: rgb(84,246,135);
+    background: radial-gradient(circle, rgba(84,246,135,0.958420868347339) 0%, rgba(0,56,255,1) 100%);
+    background-size: cover;
+    margin: 0;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin: auto;
+}
+
+h2{
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    color: white;
+}
+
+.titular{
+    text-align: center;
+    margin-top: 150px;
+}
+
+.contenedor{
+    max-width: 1280px;
+    width: 90%;
+    margin: auto;
+}
+    

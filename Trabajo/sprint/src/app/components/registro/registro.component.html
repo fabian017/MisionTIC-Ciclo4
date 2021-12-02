@@ -1,0 +1,243 @@
+<head>
+    <title>Registro</title>
+    <!--Made with love by Mutiullah Samim -->
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--Custom styles-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<app-header></app-header>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <form id="formularioUsuario" action="" [formGroup]="formulario" (ngSubmit)="guardarDatos()" autocomplete="off">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registro Usuario</h3>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="nombre" 
+                                    name="nombre"
+                                    class="form-control" 
+                                    formControlName="nombre"
+                                    [class.is-invalid]="nombreNoValido"
+                                    placeholder="Nombres"
+                                    #nombre>
+                            <small *ngIf="nombreNoValido" class="text-danger">
+                                Debe Ingresar Los Nombres
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="apellido" 
+                                    name="apellido"
+                                    class="form-control" 
+                                    formControlName="apellido"
+                                    [class.is-invalid]="apellidoNoValido"
+                                    placeholder="Apellido"
+                                    #apellido>
+                            <small *ngIf="apellidoNoValido" class="text-danger">
+                                Debe Ingresar Los Apellidos
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="fechaNacimiento" 
+                                    name="fechaNacimiento"
+                                    class="form-control" 
+                                    formControlName="fechaNacimiento"
+                                    [class.is-invalid]="fechaNacimientoNoValido"
+                                    placeholder="Fecha De Nacimiento (AAAA-MM-DD)"
+                                    #fechaNacimiento>
+                            <small *ngIf="fechaNacimientoNoValido" class="text-danger">
+                                Debe Ingresar La Fecha De Nacimiento
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="edad" 
+                                    name="edad"
+                                    class="form-control" 
+                                    formControlName="edad"
+                                    [class.is-invalid]="edadNoValido"
+                                    placeholder="Edad"
+                                    #edad>
+                            <small *ngIf="edadNoValido" class="text-danger">
+                                Debe Ingresar Su Edad
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="signoZodiaco" 
+                                    name="signoZodiaco"
+                                    class="form-control" 
+                                    formControlName="signoZodiaco"
+                                    [class.is-invalid]="signoZodiacoNoValido"
+                                    placeholder="Signo Zodiacal"
+                                    #signoZodiaco>
+                            <small *ngIf="signoZodiacoNoValido" class="text-danger">
+                                Debe Ingresar Su Signo Zodiacal
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-globe-asia"id="icono2"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="idiomaNativo" 
+                                    name="idiomaNativo"
+                                    class="form-control" 
+                                    formControlName="idiomaNativo"
+                                    [class.is-invalid]="idiomaNativoNoValido"
+                                    placeholder="Su Idioma Nativo"
+                                    #idiomaNativo>
+                            <small *ngIf="idiomaNativoNoValido" class="text-danger">
+                                Debe Ingresar Su Idioma Nativo
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-globe-asia"id="icono2"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="idiomaAprender" 
+                                    name="idiomaAprender"
+                                    class="form-control" 
+                                    formControlName="idiomaAprender"
+                                    [class.is-invalid]="idiomaAprenderNoValido"
+                                    placeholder="Su Idioma A Aprender"
+                                    #idiomaAprender>
+                            <small *ngIf="idiomaAprenderNoValido" class="text-danger">
+                                Debe Ingresar Su Idioma A Aprender"
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="usuario" 
+                                    name="usuario"
+                                    class="form-control" 
+                                    formControlName="usuario"
+                                    [class.is-invalid]="usuarioNoValido"
+                                    placeholder="Usuario"
+                                    #usuario>
+                            <small *ngIf="usuarioNoValido" class="text-danger">
+                                Debe Ingresar Su Usuario
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" 
+                                    id="password" 
+                                    name="password"
+                                    class="form-control" 
+                                    formControlName="password"
+                                    [class.is-invalid]="passwordNoValido"
+                                    placeholder="Contraseña"
+                                    #password>
+                            <small *ngIf="passwordNoValido" class="text-danger">
+                                Debe Ingresar Su Contraseña
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="tipoDeCliente" 
+                                    name="tipoDeCliente"
+                                    class="form-control" 
+                                    formControlName="tipoDeCliente"
+                                    [class.is-invalid]="tipoDeClienteNoValido"
+                                    placeholder="1 si es gratis o 2 si es premium"
+                                    #tipoDeCliente>
+                            <small *ngIf="tipoDeClienteNoValido" class="text-danger">
+                                Debe Ingresar 1 si es estudiante o 2 si es profesor
+                            </small>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                               <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" 
+                                    id="tipoUsuario" 
+                                    name="tipoUsuario"
+                                    class="form-control" 
+                                    formControlName="tipoUsuario"
+                                    [class.is-invalid]="tipoUsuarioNoValido"
+                                    placeholder="1 si es estudiante o 2 si es profesor"
+                                    #tipoUsuario>
+                            <small *ngIf="tipoUsuarioNoValido" class="text-danger">
+                                Debe Ingresar 1 si es estudiante o 2 si es profesor
+                            </small>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button type="submit" class="login_btn justify-content-center">
+                                Registrar
+                            </button>
+                        </div>
+                    
+                </div>
+                </div>
+            </form>
+            <div *ngIf="error" class="error-registro">
+                Los datos ingresados son incorrectos
+            </div>
+            <div *ngIf="ingresado" class="alert-info">
+                Su registro se ha realizado con exito
+                <br>
+                Por favor Inicie Seión <a [routerLink]="['/login']">aquí</a>
+            </div>
+            </div>
+        
+        </div>
+</body>
+<app-footer></app-footer>
+

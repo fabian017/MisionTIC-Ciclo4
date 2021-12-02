@@ -54,7 +54,7 @@ export class ApiService {
       return data;
     }));
   }
-
+   /*Actualizar Usuario en plataforma*/
   updateUsuario(usuario:any){
     const peticion = `${this.url}usuarios`;
 
@@ -67,6 +67,33 @@ export class ApiService {
                           .pipe(map((data:any)=>{
                             return data;
                           }))
+  }
+
+   /*Registrar Usuario en plataforma*/
+    addUsuario(user:any){
+    const peticion = `${this.url}usuarios/registrar`;
+    /*const user:any = {
+      nombre,
+      apellido,
+      fechaNacimiento,
+      edad,
+      signoZodiaco,
+      idiomaNativo,
+      idiomaAprender,
+      usuario,
+      password,
+      tipoDeCliente,
+      tipoUsuario
+    };*/
+    const headers:HttpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json;charset="utf-8"'
+    })
+
+    return this.httpClient.post(peticion, user,{headers})
+                           .pipe(map((data:any)=>{
+                              return data;
+                           }));
+
   }
 
 }

@@ -11,9 +11,11 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { RUTAS } from './app.routes';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegistrosComponent } from './components/registros/registros.component';
 import { CerrarSesionComponent } from './components/cerrar-sesion/cerrar-sesion.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
     PrincipalComponent,
     InicioComponent,
     LoginComponent,
-    RegistrosComponent,
     CerrarSesionComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    RegistroComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

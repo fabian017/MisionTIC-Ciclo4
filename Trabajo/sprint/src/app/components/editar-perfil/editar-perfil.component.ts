@@ -63,6 +63,7 @@ export class EditarPerfilComponent implements OnInit {
     this.perfil.usuario = usuario;
     this.perfil.password = password;
     this.error = false;
+    console.log(this.perfil)
 
     this.apiService.updateUsuario(this.perfil).subscribe(response=>{
       let respuesta = JSON.parse(JSON.stringify(response));
